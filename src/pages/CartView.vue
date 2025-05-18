@@ -67,12 +67,24 @@
           </div>
 
           <h3>Metode Pembayaran</h3>
-          <div class="payment-method">
-            <div class="payment-option active">
-              <i data-feather="credit-card"></i>
-              <span>QRIS</span>
-            </div>
-          </div>
+<div class="payment-method">
+  <div class="payment-option active">
+    <i data-feather="credit-card"></i>
+    <span>QRIS</span>
+  </div>
+
+  <!-- Tambahkan bagian QRIS barcode -->
+  <div class="qris-container">
+    <p class="qris-instruction">Scan QR code berikut untuk pembayaran:</p>
+    <img
+      src="@/assets/images/qris.jpg"
+      alt="QRIS Payment Code"
+      class="qris-code"
+    />
+    <p class="qris-amount">Total: Rp {{ formatPrice(totalPrice) }}</p>
+    <p class="qris-note">*Pembayaran akan diproses otomatis setelah scan</p>
+  </div>
+</div>
 
           <div class="summary-checkout">
             <h4>Ringkasan Pesanan</h4>
@@ -100,7 +112,7 @@
         <p>
           No. Order: <strong>{{ lastOrderNumber }}</strong>
         </p>
-        <router-link to="/" class="btn-back-home"> Kembali ke Beranda </router-link>
+        <router-link to="/menu" class="btn-back-home"> Kembali ke Menu </router-link>
       </div>
     </div>
 
@@ -113,6 +125,7 @@ import NavbarComponent from '@/components/Navbar.vue'
 import FooterComponent from '@/components/Footer.vue'
 import { useCartStore } from '@/stores/cartStore'
 import { ref, onMounted } from 'vue'
+import qrisCode from '@/assets/images/qris.jpg';
 
 export default {
   name: 'CartView',
@@ -121,6 +134,7 @@ export default {
     FooterComponent,
   },
   setup() {
+  const qrisImage = ref(qrisCode);
     const cartStore = useCartStore()
     const showModal = ref(false)
     const showSuccessModal = ref(false)
@@ -167,21 +181,17 @@ export default {
     }
 
     const handleCheckout = () => {
-      // Generate random order number
       const orderNumber = 'ORD-' + Math.floor(Math.random() * 1000000)
 
-      // Proses checkout (tanpa menyimpan return value)
       cartStore.checkout({
         ...checkoutData.value,
         orderNumber,
       })
 
-      // Tampilkan modal sukses
       lastOrderNumber.value = orderNumber
       showModal.value = false
       showSuccessModal.value = true
 
-      // Reset form
       checkoutData.value = {
         namaPenerima: '',
         alamat: '',
@@ -211,6 +221,7 @@ export default {
       removeItem,
       updateQuantity,
       handleCheckout,
+      qrisImage
     }
   },
 }
@@ -570,6 +581,44 @@ export default {
 
 .btn-back-home:hover {
   background-color: #1a6b4b;
+}
+
+.qris-container {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+}
+
+.qris-code {
+  width: 200px;
+  height: 200px;
+  margin: 1rem auto;
+  display: block;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: white;
+}
+
+.qris-instruction {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.qris-amount {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #0d4d36;
+  margin: 0.5rem 0;
+}
+
+.qris-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
