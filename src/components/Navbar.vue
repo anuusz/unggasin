@@ -11,8 +11,8 @@
         <router-link to="/menu">Menu</router-link>
       </div>
       <div class="navbar_icon">
-      <router-link to="/cart">
-        <i data-feather="shopping-cart"></i>
+        <router-link to="/cart">
+          <i data-feather="shopping-cart"></i>
         </router-link>
       </div>
     </nav>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'NavbarComponent',
   mounted() {
@@ -30,7 +29,7 @@ export default {
         this.$feather.replace()
       }
     })
-  }
+  },
 }
 </script>
 
@@ -47,7 +46,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0D4D36;
+  background-color: #0d4d36;
   border-radius: 2rem;
   width: 45vw;
   height: 3rem;
@@ -64,7 +63,7 @@ header {
 
 .navbar-logo {
   font-size: 1.5rem;
-  font-family: "Satisfy", cursive;
+  font-family: 'Satisfy', cursive;
   font-weight: 400;
   font-style: normal;
   color: white;
@@ -79,7 +78,7 @@ header {
 .navbar-center a {
   color: white;
   font-size: 16px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -117,10 +116,9 @@ header {
   color: yellow;
 }
 
-
 .navbar_icon i {
   width: 24px;
   height: 24px;
-  stroke: currentColor; 
+  stroke: currentColor;
 }
 </style>

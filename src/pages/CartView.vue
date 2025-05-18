@@ -14,7 +14,7 @@
 
           <div v-else>
             <div v-for="(item, index) in cart" :key="index" class="cart-item">
-              <img :src="getImageUrl(item.image)" :alt="item.name" class="cart-item-image">
+              <img :src="getImageUrl(item.image)" :alt="item.name" class="cart-item-image" />
               <div class="cart-item-details">
                 <h3 class="cart-item-name">{{ item.name }}</h3>
                 <p class="cart-item-price">Rp {{ formatPrice(item.price) }}</p>
@@ -55,30 +55,15 @@
         <form @submit.prevent="handleCheckout">
           <div class="form-group">
             <label for="namaPenerima">Nama Penerima</label>
-            <input
-              type="text"
-              id="namaPenerima"
-              v-model="checkoutData.namaPenerima"
-              required
-            >
+            <input type="text" id="namaPenerima" v-model="checkoutData.namaPenerima" required />
           </div>
           <div class="form-group">
             <label for="alamat">Alamat Lengkap</label>
-            <textarea
-              id="alamat"
-              rows="3"
-              v-model="checkoutData.alamat"
-              required
-            ></textarea>
+            <textarea id="alamat" rows="3" v-model="checkoutData.alamat" required></textarea>
           </div>
           <div class="form-group">
             <label for="noHP">Nomor HP</label>
-            <input
-              type="tel"
-              id="noHP"
-              v-model="checkoutData.noHP"
-              required
-            >
+            <input type="tel" id="noHP" v-model="checkoutData.noHP" required />
           </div>
 
           <h3>Metode Pembayaran</h3>
@@ -101,9 +86,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn-confirm-payment">
-            Konfirmasi Pembayaran
-          </button>
+          <button type="submit" class="btn-confirm-payment">Konfirmasi Pembayaran</button>
         </form>
       </div>
     </div>
@@ -114,10 +97,10 @@
         <i data-feather="check-circle"></i>
         <h2>Pembayaran Berhasil!</h2>
         <p>Pesanan Anda sedang diproses. Terima kasih telah berbelanja di Unggasin.</p>
-        <p>No. Order: <strong>{{ lastOrderNumber }}</strong></p>
-        <router-link to="/" class="btn-back-home">
-          Kembali ke Beranda
-        </router-link>
+        <p>
+          No. Order: <strong>{{ lastOrderNumber }}</strong>
+        </p>
+        <router-link to="/" class="btn-back-home"> Kembali ke Beranda </router-link>
       </div>
     </div>
 
@@ -135,7 +118,7 @@ export default {
   name: 'CartView',
   components: {
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   },
   setup() {
     const cartStore = useCartStore()
@@ -146,7 +129,7 @@ export default {
       namaPenerima: '',
       alamat: '',
       noHP: '',
-      paymentMethod: 'QRIS'
+      paymentMethod: 'QRIS',
     })
 
     const getImageUrl = (imageName) => {
@@ -184,28 +167,28 @@ export default {
     }
 
     const handleCheckout = () => {
-  // Generate random order number
-  const orderNumber = 'ORD-' + Math.floor(Math.random() * 1000000)
+      // Generate random order number
+      const orderNumber = 'ORD-' + Math.floor(Math.random() * 1000000)
 
-  // Proses checkout (tanpa menyimpan return value)
-  cartStore.checkout({
-    ...checkoutData.value,
-    orderNumber
-  })
+      // Proses checkout (tanpa menyimpan return value)
+      cartStore.checkout({
+        ...checkoutData.value,
+        orderNumber,
+      })
 
-  // Tampilkan modal sukses
-  lastOrderNumber.value = orderNumber
-  showModal.value = false
-  showSuccessModal.value = true
+      // Tampilkan modal sukses
+      lastOrderNumber.value = orderNumber
+      showModal.value = false
+      showSuccessModal.value = true
 
-  // Reset form
-  checkoutData.value = {
-    namaPenerima: '',
-    alamat: '',
-    noHP: '',
-    paymentMethod: 'QRIS'
-  }
-}
+      // Reset form
+      checkoutData.value = {
+        namaPenerima: '',
+        alamat: '',
+        noHP: '',
+        paymentMethod: 'QRIS',
+      }
+    }
 
     onMounted(() => {
       if (window.feather) {
@@ -227,9 +210,9 @@ export default {
       closeSuccessModal,
       removeItem,
       updateQuantity,
-      handleCheckout
+      handleCheckout,
     }
-  }
+  },
 }
 </script>
 
@@ -247,7 +230,7 @@ export default {
 .cart-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #0D4D36;
+  color: #0d4d36;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -284,7 +267,7 @@ export default {
 
 .btn-belanja {
   padding: 0.75rem 1.5rem;
-  background-color: #0D4D36;
+  background-color: #0d4d36;
   color: white;
   border-radius: 2rem;
   font-family: 'Inter', sans-serif;
@@ -349,7 +332,7 @@ export default {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #0D4D36;
+  background-color: #0d4d36;
   color: white;
   display: flex;
   align-items: center;
@@ -366,7 +349,7 @@ export default {
 .cart-item-total {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  color: #0D4D36;
+  color: #0d4d36;
   min-width: 100px;
   text-align: right;
 }
@@ -411,7 +394,7 @@ export default {
 
 .btn-checkout {
   padding: 0.75rem;
-  background-color: #0D4D36;
+  background-color: #0d4d36;
   color: white;
   border-radius: 2rem;
   font-family: 'Inter', sans-serif;
@@ -433,7 +416,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -502,7 +485,7 @@ export default {
 }
 
 .payment-option.active {
-  border-color: #0D4D36;
+  border-color: #0d4d36;
   background-color: rgba(13, 77, 54, 0.1);
 }
 
@@ -515,7 +498,7 @@ export default {
 
 .summary-checkout h4 {
   margin-bottom: 15px;
-  color: #0D4D36;
+  color: #0d4d36;
 }
 
 .summary-item {
@@ -536,7 +519,7 @@ export default {
 .btn-confirm-payment {
   width: 100%;
   padding: 0.75rem;
-  background-color: #0D4D36;
+  background-color: #0d4d36;
   color: white;
   border-radius: 0.5rem;
   font-family: 'Inter', sans-serif;
@@ -559,12 +542,12 @@ export default {
 .success-content i {
   width: 64px;
   height: 64px;
-  color: #0D4D36;
+  color: #0d4d36;
   margin-bottom: 1rem;
 }
 
 .success-content h2 {
-  color: #0D4D36;
+  color: #0d4d36;
   margin-bottom: 1rem;
 }
 
@@ -575,7 +558,7 @@ export default {
 
 .btn-back-home {
   padding: 0.75rem 1.5rem;
-  background-color: #0D4D36;
+  background-color: #0d4d36;
   color: white;
   border-radius: 0.5rem;
   font-family: 'Inter', sans-serif;

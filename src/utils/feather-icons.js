@@ -8,7 +8,7 @@ export function createFeatherIcons(app) {
     },
     updated(el) {
       replaceIcon(el)
-    }
+    },
   })
 
   // Register global method (optional)
@@ -19,8 +19,8 @@ function replaceIcon(el) {
   if (el.hasAttribute('data-feather')) {
     feather.replace({
       'stroke-width': 1.5, // default stroke width
-      'width': 24, // default width
-      'height': 24 // default height
+      width: 24, // default width
+      height: 24, // default height
     })
   }
 }

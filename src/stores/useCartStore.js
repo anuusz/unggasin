@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 export const useCartStore = defineStore('cart', {
   state: () => ({
     items: [],
-    total: 0
+    total: 0,
   }),
   actions: {
     addItem(item) {
@@ -16,9 +16,9 @@ export const useCartStore = defineStore('cart', {
     },
     calculateTotal() {
       this.total = this.items.reduce((sum, item) => sum + item.price, 0)
-    }
+    },
   },
   getters: {
-    itemCount: (state) => state.items.length
-  }
+    itemCount: (state) => state.items.length,
+  },
 })

@@ -6,12 +6,12 @@
     </div>
 
     <div class="footer-contact">
-      <p><strong>Contact</strong><br>089637287240</p>
-      <p><strong>Email</strong><br>sales@unggasin.com</p>
+      <p><strong>Contact</strong><br />089637287240</p>
+      <p><strong>Email</strong><br />sales@unggasin.com</p>
     </div>
 
     <div class="footer-address">
-      <p><strong>Alamat</strong><br>Jl Lorem Ipsum No 123</p>
+      <p><strong>Alamat</strong><br />Jl Lorem Ipsum No 123</p>
       <p><strong>Ikuti Kami</strong></p>
       <a href="http://instagram.com">@Unggasin_Aja</a>
     </div>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'FooterComponent'
+  name: 'FooterComponent',
 }
 </script>
 
@@ -41,25 +41,28 @@ export default {
 
 .footer-brand h2 {
   font-size: 3rem;
-  font-family: "Satisfy", cursive;
+  font-family: 'Satisfy', cursive;
   font-weight: 200;
 }
 
 .footer-brand p {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
 }
 
-.footer-contact, .footer-address {
+.footer-contact,
+.footer-address {
   text-align: right;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   text-align: left;
 }
 
-.footer-contact p, .footer-address p, .footer-address a {
+.footer-contact p,
+.footer-address p,
+.footer-address a {
   margin: 5px 0;
   color: #ffffff;
 }

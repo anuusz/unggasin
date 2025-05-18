@@ -13,7 +13,7 @@ export const useCartStore = defineStore('cart', () => {
 
   // Tambah item ke cart
   const addItem = (product) => {
-    const existingItem = cart.value.find(item => item.id === product.id)
+    const existingItem = cart.value.find((item) => item.id === product.id)
 
     if (existingItem) {
       existingItem.quantity += product.quantity
@@ -21,7 +21,7 @@ export const useCartStore = defineStore('cart', () => {
     } else {
       cart.value.push({
         ...product,
-        total: product.price * product.quantity
+        total: product.price * product.quantity,
       })
     }
     saveToLocalStorage()
@@ -58,7 +58,7 @@ export const useCartStore = defineStore('cart', () => {
       items: [...cart.value],
       total: totalPrice.value,
       orderDate: new Date().toISOString(),
-      status: 'pending'
+      status: 'pending',
     }
 
     // Tambahkan ke riwayat order
@@ -79,6 +79,6 @@ export const useCartStore = defineStore('cart', () => {
     addItem,
     removeItem,
     updateQuantity,
-    checkout
+    checkout,
   }
 })

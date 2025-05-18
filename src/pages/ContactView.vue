@@ -7,19 +7,14 @@
           <h1>Ada <em>kendala?</em> Kami Siap Melayani Anda !</h1>
 
           <p class="Info_kontak">
-            Hubungi kami jika terdapat kendala terkait pembelian, kesalahan pembayaran,
-            atau jika Anda memiliki kritik dan masukan. Kami akan melayani Anda dengan
-            sepenuh hati pada jam operasional kami. Anda juga dapat meninggalkan pesan
-            melalui WhatsApp kami.
+            Hubungi kami jika terdapat kendala terkait pembelian, kesalahan pembayaran, atau jika
+            Anda memiliki kritik dan masukan. Kami akan melayani Anda dengan sepenuh hati pada jam
+            operasional kami. Anda juga dapat meninggalkan pesan melalui WhatsApp kami.
           </p>
 
-          <p class="Wkt_opr">
-            Waktu operasional kami : Senin - Jum'at, 9.00 - 19.00 WIB
-          </p>
+          <p class="Wkt_opr">Waktu operasional kami : Senin - Jum'at, 9.00 - 19.00 WIB</p>
 
-          <button class="button open-button" @click="openModal">
-            Hubungi kami
-          </button>
+          <button class="button open-button" @click="openModal">Hubungi kami</button>
         </div>
       </div>
 
@@ -31,9 +26,7 @@
             <li>📧 unggasin@gmail.com</li>
             <li>🗺️ Jl Ayam Kampung No 123, Jakarta</li>
           </ul>
-          <button class="button close-button" @click="closeModal">
-            Kembali
-          </button>
+          <button class="button close-button" @click="closeModal">Kembali</button>
         </div>
       </dialog>
     </main>
@@ -50,7 +43,7 @@ export default {
   name: 'ContactView',
   components: {
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   },
   setup() {
     const modal = ref(null)
@@ -63,15 +56,14 @@ export default {
       modal.value.close()
     }
 
-    onMounted(() => {
-    })
+    onMounted(() => {})
 
     return {
       modal,
       openModal,
-      closeModal
+      closeModal,
     }
-  }
+  },
 }
 </script>
 
@@ -124,7 +116,7 @@ export default {
 
 .penjelasan h1 {
   font-size: 2rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -157,7 +149,7 @@ export default {
 .modal_content p {
   color: #2b5832;
   font-size: 2rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -166,7 +158,7 @@ export default {
 .modal_content ul {
   color: #2b5832;
   font-size: 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;

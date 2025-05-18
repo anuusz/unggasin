@@ -1,6 +1,6 @@
 <template>
   <div class="Menu_card">
-    <img class="Gambar_konten" :src="imageSrc" :alt="product.name">
+    <img class="Gambar_konten" :src="imageSrc" :alt="product.name" />
     <div class="detil">
       <h1>{{ product.name }}<em>/kg</em></h1>
     </div>
@@ -25,8 +25,8 @@ export default {
   props: {
     product: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props) {
     const cartStore = useCartStore()
@@ -49,7 +49,7 @@ export default {
     const addToCart = () => {
       const productToAdd = {
         ...props.product,
-        quantity: quantity.value
+        quantity: quantity.value,
       }
 
       cartStore.addItem(productToAdd)
@@ -65,9 +65,9 @@ export default {
       formattedPrice,
       increment,
       decrement,
-      addToCart
+      addToCart,
     }
-  }
+  },
 }
 </script>
 
@@ -76,14 +76,14 @@ export default {
 .Menu_card {
   padding: 2em;
   color: #2b5832;
-  background: linear-gradient(135deg, rgba(255, 255,255,0.1),rgba(255, 255, 255,0));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255,0.18);
-  box-shadow: 0 5px 32px 0 rgba(0, 0, 0,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.35);
   border-radius: 2rem;
-  width:20rem;
-  height:25rem;
+  width: 20rem;
+  height: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,7 +128,7 @@ export default {
 }
 
 .tambah_keranjang {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   background-color: #2b5832;
   color: #ffffff;
@@ -167,7 +167,7 @@ export default {
 
 .detil h1 {
   font-size: 1.5rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 800;
   text-align: left;
 }
@@ -175,14 +175,14 @@ export default {
 .Menu_card p {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   text-align: left;
 }
 
 .detil em {
   font-size: 0.7rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
 </style>

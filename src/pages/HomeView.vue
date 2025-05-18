@@ -5,7 +5,7 @@
       <section class="hero">
         <div class="Card_tambahan"></div>
         <div class="konten">
-          <h1>Pesan <br>Unggas<br>Segar,</h1>
+          <h1>Pesan <br />Unggas<br />Segar,</h1>
           <p>Antar ke Dapurmu!</p>
           <router-link to="/menu" class="cta_hero">Belanja Sekarang</router-link>
         </div>
@@ -24,8 +24,8 @@ export default {
   name: 'HomeView',
   components: {
     NavbarComponent,
-    FooterComponent
-  }
+    FooterComponent,
+  },
 }
 </script>
 
@@ -46,9 +46,9 @@ export default {
   transform: translate(-50%, -50%);
   width: 85%;
   height: 80%;
-  background: linear-gradient(135deg, rgba(255, 255,255,0.1),rgba(255, 255, 255,0));
-  border: 1px solid rgba(255, 255, 255,0.18);
-  box-shadow: 0 5px 32px 0 rgba(0, 0, 0,0.35);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 5px 32px 0 rgba(0, 0, 0, 0.35);
   border-radius: 2rem;
   z-index: 1;
 }
@@ -63,7 +63,7 @@ export default {
 }
 
 .konten h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 5rem;
   font-weight: 800;
   line-height: 100%;
@@ -72,7 +72,7 @@ export default {
 }
 
 .konten p {
-  font-family: "Inter",sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   color: #488351;
@@ -81,7 +81,7 @@ export default {
 
 .cta_hero {
   background-color: #2b5832;
-  color:white;
+  color: white;
   border-radius: 2rem;
   height: 4rem;
   width: 12rem;
@@ -89,7 +89,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   transition: background-color 0.3s ease;
 }
 

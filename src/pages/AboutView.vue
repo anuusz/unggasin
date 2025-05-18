@@ -9,12 +9,21 @@
           <div class="about-content">
             <div class="about-section">
               <h2>Tentang Kami</h2>
-              <p>Kami adalah sebuah tim yang berdedikasi untuk memberikan layanan terbaik dengan mengutamakan kualitas, kenyamanan, dan kepercayaan pelanggan. Setiap produk dan layanan kami hadir melalui proses yang terencana dan penuh ketelitian, demi memastikan kepuasan pelanggan di setiap momen.</p>
+              <p>
+                Kami adalah sebuah tim yang berdedikasi untuk memberikan layanan terbaik dengan
+                mengutamakan kualitas, kenyamanan, dan kepercayaan pelanggan. Setiap produk dan
+                layanan kami hadir melalui proses yang terencana dan penuh ketelitian, demi
+                memastikan kepuasan pelanggan di setiap momen.
+              </p>
             </div>
 
             <div class="about-section">
               <h2>Visi</h2>
-              <p>Menjadi pilihan utama masyarakat dalam menyediakan solusi terbaik dan terpercaya di bidang kami. Kami berkomitmen untuk terus berinovasi, berkembang, dan memberikan manfaat nyata bagi pelanggan serta lingkungan sekitar.</p>
+              <p>
+                Menjadi pilihan utama masyarakat dalam menyediakan solusi terbaik dan terpercaya di
+                bidang kami. Kami berkomitmen untuk terus berinovasi, berkembang, dan memberikan
+                manfaat nyata bagi pelanggan serta lingkungan sekitar.
+              </p>
             </div>
           </div>
 
@@ -22,7 +31,7 @@
             <h2>Kenapa Memilih Kami?</h2>
             <div class="benefits-grid">
               <div class="benefit-card" v-for="(benefit, index) in benefits" :key="index">
-                <img :src="getImageUrl(benefit.image)" :alt="benefit.title">
+                <img :src="getImageUrl(benefit.image)" :alt="benefit.title" />
                 <p>{{ benefit.description }}</p>
               </div>
             </div>
@@ -42,7 +51,7 @@ export default {
   name: 'AboutView',
   components: {
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   },
   data() {
     return {
@@ -50,32 +59,31 @@ export default {
         {
           image: 'LOGO-PREMIUM-2.png',
           title: 'Ayam Segar',
-          description: 'Ayam segar kualitas terbaik langsung dari peternak lokal.'
+          description: 'Ayam segar kualitas terbaik langsung dari peternak lokal.',
         },
         {
           image: 'no_BGoganic.png',
           title: 'Ayam Organik',
-          description: 'Tanpa bahan pengawet dan bebas antibiotik.'
+          description: 'Tanpa bahan pengawet dan bebas antibiotik.',
         },
         {
           image: 'Halal.png',
           title: 'Halal',
-          description: 'Diproses dan dipotong secara halal sesuai syariat'
-        }
-      ]
+          description: 'Diproses dan dipotong secara halal sesuai syariat',
+        },
+      ],
     }
   },
   methods: {
     getImageUrl(imageName) {
       return new URL(`/src/assets/images/${imageName}`, import.meta.url).href
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style scoped>
 .about-hero {
-  background-image: url('@/assets/images/about-bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -99,7 +107,7 @@ export default {
 
 .brand-title {
   padding-top: 1em;
-  font-family: "Satisfy", cursive;
+  font-family: 'Satisfy', cursive;
   font-weight: 400;
   font-size: 5rem;
   color: white;
@@ -128,7 +136,7 @@ export default {
 }
 
 .about-section h2 {
-  font-family: "Satisfy", cursive;
+  font-family: 'Satisfy', cursive;
   font-weight: 400;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
@@ -136,7 +144,7 @@ export default {
 }
 
 .about-section p {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -152,7 +160,7 @@ export default {
 }
 
 .why-choose-us h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 2rem;
   color: white;
@@ -189,7 +197,7 @@ export default {
 }
 
 .benefit-card p {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: #333;
   font-size: 1rem;
 }

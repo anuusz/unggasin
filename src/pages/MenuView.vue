@@ -5,15 +5,16 @@
       <section class="Menu_unggasin">
         <div class="Menu_desc">
           <h1>Selamat Datang Di Kios Kami!</h1>
-          <P>Kami menyediakan berbagai pilihan produk unggas segar seperti ayam broiler, ayam kampung, bebek utuh, serta bagian potongan seperti dada, paha, dan sayap. Kami juga menawarkan telur unggas segar untuk kebutuhan dapur Anda. Semua produk kami dijamin segar, berkualitas, dan siap untuk diolah menjadi hidangan lezat bagi keluarga Anda.</P>
+          <P
+            >Kami menyediakan berbagai pilihan produk unggas segar seperti ayam broiler, ayam
+            kampung, bebek utuh, serta bagian potongan seperti dada, paha, dan sayap. Kami juga
+            menawarkan telur unggas segar untuk kebutuhan dapur Anda. Semua produk kami dijamin
+            segar, berkualitas, dan siap untuk diolah menjadi hidangan lezat bagi keluarga Anda.</P
+          >
         </div>
 
         <div class="Konten_menu">
-          <ProductCard
-            v-for="product in products"
-            :key="product.id"
-            :product="product"
-          />
+          <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
       </section>
     </main>
@@ -31,7 +32,7 @@ export default {
   components: {
     NavbarComponent,
     FooterComponent,
-    ProductCard
+    ProductCard,
   },
   data() {
     return {
@@ -43,10 +44,10 @@ export default {
         { id: 5, name: 'Ayam Kampung', price: 65000, image: 'dagingAyam.png' },
         { id: 6, name: 'Telur Ayam', price: 27000, image: 'Telur-ayam.png' },
         { id: 7, name: 'Telur Bebek', price: 36000, image: 'telor-bebek.png' },
-        { id: 8, name: 'Telur Ayam K', price: 45000, image: 'Telor-ayamKampung.png' }
-      ]
+        { id: 8, name: 'Telur Ayam K', price: 45000, image: 'Telor-ayamKampung.png' },
+      ],
     }
-  }
+  },
 }
 </script>
 
@@ -68,7 +69,7 @@ export default {
 }
 
 .Menu_desc h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -77,7 +78,7 @@ export default {
 .Menu_desc p {
   font-size: 1rem;
   line-height: 1.6;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
 
